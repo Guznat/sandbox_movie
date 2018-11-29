@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap %}
+{% block title %}{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-7">
+            <ul class="list-group" style="width: 500px">
+                <li class="list-group-item"><h1>{{ film.name }}</h1></li>
+                <li class="list-group-item"><strong>Description:</strong><br>{{ film.description }}</li>
+                <li class="list-group-item"><strong>Relase in:</strong><br> {{ film.released }}</li>
+                <li class="list-group-item"><strong>Imdb rating:</strong><br>{{ film.imdb_rating }}</li>
+            </ul>
+            {% if info == None %}
+                {% include 'extrainfoform.html' %}
+            {% elif info != None %}
+                <ul class="list-group" style="width: 500px">
+                    Extra info: <br>
+
+                    <li class="list-group-item"><strong>Rodzaj:</strong><br>{{ info.get_rodzaj_display }}</li>
+                    <li class="list-group-item"><strong>Czas trwania</strong><br>{{ info.czas_trwnia }}min.</li>
+                    <a class="btn btn-success btn-me" href="{% url 'editextrainfo' info.movie_id %}" role="button">Edit
+                        extra
+                        info
+                        <i
+                                class="fas fa-edit"></i></a>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="col-sm-5">
+            <strong>Photo:</strong><br><img class="finfo" src="/media/{{ film.photo }}">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="komenty">
+            <div class="card" style="width: 500px">
+                <a role="button" href="{% url 'form_rev' film.id %}" class="btn btn-success btn-me">Add new comment<i
+                        class="far fa-file"></i></a>
+
+                {% for rev in comment %}
+                    <div class="card" style="width: 500px">
+                        <strong>{{ rev.nick }}</strong>
+                    </div>
+                    <div class="card-body">
+                        <p>{{ rev.text }}</p>
+                        <footer class="blockquote-footer">Rate: {{ rev.stars }}/10</footer>
+                        <footer class="blockquote-footer">Date: {{ rev.date }} </footer>
+
+                    </div>
+                    <br>
+                {% empty %}
+                    <br>
+                    <p>No comment yet.</p>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br> <a role="button" href="{% url 'wszystkie_filmy' %}" class="btn btn-success btn-me">Back <i
+        class="fas fa-backward"></i></a>
+
+{% endblock %}

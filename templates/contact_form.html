@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %} Contact me! {% endblock %}
+{% block content %}
+    {% load static %}
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Write to me!</h5>
+                    <form method="post">
+                        <div class="form-group">
+                            {% csrf_token %}
+                            {{ form|bootstrap }}
+                            <script>
+  function clickAlert() {
+    alert("Thanks for message :)!");
+}
+</script>
+                            <button type="submit" onclick="clickAlert()" class="btn btn-success">Send <i class="fas fa-save"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <img class="natan" src="{% static 'natan.jpg' %}">
+        </div>
+        <div class="col-sm-4" id="odnatana">
+            <strong>My github: </strong>
+            <div class="ehh"><a class="btn btn-success btn-me" href="https://github.com/Guznat" role="button">Guznat
+                <i class="fab fa-github"></i></a></div>
+            <br>
+            <br>
+            <strong>My linkedin: </strong>
+            <div class="ehh"><a class="btn btn-success btn-me" href="https://pl.linkedin.com/in/natan-guzik-9664ab118" role="button">Natan Guzik
+                <i class="fab fa-linkedin"></i></a></div>
+            <br>
+            <br>
+            <strong>My facebook: </strong>
+            <div class="ehh"><a class="btn btn-success btn-me" href="https://www.facebook.com/nintai.channel"
+                                role="button">Natan Guzik
+                <i class="fab fa-facebook"></i></a></div>
+            <br>
+            <br>
+            <strong>My twitter: </strong>
+            <div class="ehh"><a class="btn btn-success btn-me" href="https://twitter.com/NatanGuzik" role="button">Natan
+                Guzik
+                <i class="fab fa-twitter"></i></a></div>
+            <br>
+            <br>
+            <strong>My twitch: </strong>
+            <div class="ehh"><a class="btn btn-success btn-me" href="https://www.twitch.tv/n4t4n" role="button">N4T4N
+                <i class="fab fa-twitch"></i></a></div>
+            <br>
+            <br>
+            <strong>My instagram: </strong>
+            <div class="ehh"><a class="btn btn-success btn-me" href="https://www.instagram.com/nataniaga/"
+                                role="button">nataniaga
+                <i class="fab fa-instagram"></i></a></div>
+        </div>
+{#    <div class="col-sm-4">#}
+{#  <img class="snapchat" src="{% static 'snap.jpg' %}">#}
+{#    </div>#}
+    </div>
+{% endblock %}

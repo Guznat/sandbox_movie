@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}Formularz filmu{% endblock %}
+{% block content %}
+    <form role="form" enctype="multipart/form-data" method="post">
+        <a role="button" href="{% url 'wszystkie_filmy' %}" class="btn btn-success btn-me">Back <i
+                class="fas fa-backward"></i></a>
+        <legend>Formularz filmu</legend>
+        {% csrf_token %}
+        {{ form|bootstrap }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Save <i class="fas fa-save"></i></button>
+            <a type="button" href="{% url 'wszystkie_filmy' %}" class="btn btn-success">Back <i
+                    class="fas fa-backward"></i></a>
+        </div>
+    </form>
+{% endblock %}

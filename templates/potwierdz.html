@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Usuń film{% endblock %}
+{% block content %}
+    <div class="alert alert-warning" role="alert">
+        <h2>Do You really wants delete {{ film.name }}?</h2>
+        <form method="post">
+
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash"></i></button>
+            <a role="button" href="{% url 'wszystkie_filmy' %}" class="btn btn-success btn-me">Back <i
+                    class="fas fa-backward"></i></a>
+        </form>
+    </div>
+
+{% endblock %}

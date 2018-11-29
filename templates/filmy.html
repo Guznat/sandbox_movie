@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FILMY</title>
+</head>
+<body>
+<h5>LISTA FILMÓW</h5>
+{% for f in filmy%}
+<br>
+{{ f }}
+{% endfor %}
+
+</body>
+</html>

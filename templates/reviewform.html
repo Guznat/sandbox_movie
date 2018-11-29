@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%  load bootstrap %}
+{% block title %} Add Rewiew{% endblock %}
+{% block content %}
+    <form action="" method="post">
+
+        <legend>Add extra info </legend>
+        {% csrf_token %}
+        {{ form_rev|bootstrap }}
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Save <i class="fas fa-save"></i></button>
+        </div>
+    </form>
+{% endblock %}

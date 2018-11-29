@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Lista filmów {% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-7">
+            <a type="button" href="{% url 'nowy_film' %}"
+               class="btn btn-success btn-lg btn-block">Add new film <i class="far fa-file"></i></a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% for r in text %}
+        <div class="card" style="width: 1000px">
+            <div class="card-body"><img class="zlf" src="/media/{{ r.photo }}">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h4><a href="{% url 'film_id' r.id %}">{{ r }}</a></h4>
+                    </div>
+                    <div class="col-sm-4">
+                        <a class="btn btn-success btn-me" href="{% url 'edytuj_film' r.id %}" role="button">Edit <i
+                                class="fas fa-edit"></i></a>
+                        <a class="btn btn-success btn-me" href="{% url 'usun_film' r.id %}" role="button">Delete <i
+                                class="fas fa-trash"></i></a></div>
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <p class="desc">{{ r.description }} </p>
+                            <a class="btn btn-success btn-me" href="{% url 'film_id' r.id %}"
+                               role="button">More..</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

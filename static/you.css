@@ -1,0 +1,61 @@
+
+h3 {
+    color: #000000;
+}
+
+table {
+    border: 1px solid black;
+}
+
+.zlf {
+    width: 150px;
+    float: left;
+    margin-right: 15px;
+}
+
+.desc {
+    margin-left: 15px;
+}
+
+.finfo {
+    width: 350px;
+    margin-right: 100px;
+}
+
+a {
+    color: black;
+}
+
+body, html {
+    height: 100%;
+}
+.bg {
+    background-image: url("https://rmbiggs.files.wordpress.com/2011/03/repeating-left.png");
+    background-repeat: repeat;
+
+}
+.clock {
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
+    /*margin-top: 8px;*/
+    color: limegreen;
+    font-family: FontAwesome;
+    letter-spacing: 2px;
+
+
+}
+.natan {
+    width: 461px;
+    height: 614px;
+}
+
+.snapchat {
+    width: 200px;
+    height: 200px;
+}
+
+#odnatana {
+    margin-left: 30px;
+}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}List of user{% endblock %}
+{% block content %}
+    <ul class="list-group">
+
+    {% for u in users %}
+        <a class="btn btn-primary btn-sm" href="{% url 'profile' u.id %}" role="button">{{ u }}</a>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
