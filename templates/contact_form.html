@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
+{% load static %}
 {% block title %} Contact me! {% endblock %}
 {% block content %}
-    {% load static %}
+    <div id="contact_div">
     <div class="row">
         <div class="col-sm-2">
             <div class="card" style="width: 18rem;">
@@ -62,5 +63,6 @@
 {#    <div class="col-sm-4">#}
 {#  <img class="snapchat" src="{% static 'snap.jpg' %}">#}
 {#    </div>#}
+    </div>
     </div>
 {% endblock %}

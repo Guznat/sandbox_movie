@@ -1,0 +1,4 @@
+<form method="GET" action="{% url 'meows_list' %}">
+    <input type="text" name="q" placeholder="Search for meow", value="{{ request.GET.q }}"/>
+    <input type="submit" value="Search"/>
+</form>

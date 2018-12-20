@@ -3,6 +3,9 @@ from .models import *
 admin.site.register(ExtraInfo)
 admin.site.register(Movie)
 admin.site.register(Review)
+
+
+
 # @admin.register(Movie)
 # class MovieAdmin(admin.ModelAdmin):
 #     #fields = ('name', 'description') co chcemy miec wyswietlane w srodku

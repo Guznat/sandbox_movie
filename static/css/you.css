@@ -29,11 +29,6 @@ a {
 body, html {
     height: 100%;
 }
-.bg {
-    background-image: url("https://rmbiggs.files.wordpress.com/2011/03/repeating-left.png");
-    background-repeat: repeat;
-
-}
 .clock {
     /*position: absolute;*/
     /*top: 50%;*/
@@ -58,4 +53,45 @@ body, html {
 
 #odnatana {
     margin-left: 30px;
+}
+
+
+#meow_card_list {
+    max-height: 800px;
+    max-width: 600px;
+}
+
+
+#hello_homepage {
+    background-image: url("https://wallpaperplay.com/walls/full/8/6/f/11394.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+
+}
+#zegar {
+    margin-right: 100px;
+    color: black;
+}
+
+#zdanie_homepage {
+    background: rgba(53, 50, 50, 0.3);
+    background-size: cover;
+    color: whitesmoke;
+}
+
+#login_p {
+    margin-left: 4px;
+}
+
+
+#navigationbar {
+    margin-bottom: 30px;
+}
+#contact_div {
+}
+#logo {
+    height: 45px;
+    width: 45px;
 }

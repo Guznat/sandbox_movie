@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap %}
-{% block title %}HOMEPAGE{% endblock %}
+{% block title %}{{ block.super }} | HOMEPAGE{% endblock %}
 {% block content %}
     <br>
     <br>
@@ -10,13 +10,16 @@
     <br>
     <br>
     <br>
-    <div class="jumbotron">
+    <div class="jumbotron" id="hello_homepage">
         {% if user.is_authenticated %}
-            <strong><h1>Hello {{ user }}!</h1></strong>
+            <strong><h1 id="zdanie_homepage">Hello {{ user }}!</h1></strong>
         {% else %}
         <h1 class="display-4">Hello folks!</h1>
         {% endif %}
-        <p class="lead">{{ zdanie }}</p>
-    </div>
-
+    <p class="lead" id="zdanie_homepage">{{ zdanie }}</p>
+{#      <form class="form" method="POST" action="">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#    <button class="btn-success" type="submit">Meow!</button>#}
+{#    </form>#}
 {% endblock %}

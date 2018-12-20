@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}{{ block.super }} | Delete your meow!{% endblock %}
+{% block content %}
+
+    <form action="" method="POST">
+    {% csrf_token %}
+    <p>Are you sure you want to delete this Meow: "{{ object.content}}"?</p>
+    <button class="btn btn-success btn-me" type="submit">Yes!</button>
+    </form>
+{% endblock %}

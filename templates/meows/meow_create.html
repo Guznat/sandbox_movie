@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title %}{{ block.super }} | Create your meows!{% endblock %}
+
+
+{% block content %}
+{% include 'meows/form.html' with form=form btn_title='Meow!' %}
+{% endblock %}

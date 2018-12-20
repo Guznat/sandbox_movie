@@ -1,79 +1,36 @@
-{% load staticfiles %}
 {% load static %}
+{% load staticfiles %}
 {% load bootstrap %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'you.css' %}">
+    <meta charset="utf-8">
+    {#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Natan.com{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/you.css' %}">
+    {#    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">#}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
           crossorigin="anonymous">
 </head>
 <body>
-<div class="bg">
-    <div class="row" style="margin-left: 15px;">
-        <div class="col-me-3">
-            <a role="button" href="{% url 'homepage' %}" class="btn btn-success btn-me">| HOMEPAGE |</a>
-        </div>
-        <div class="col-me-3">
-            <a role="button" href="{% url 'wszystkie_filmy' %}" class="btn btn-success btn-me">| LIST OF MOVIE |</a>
-        </div>
-        <div class="col-me-2">
-            <a role="button" {#   href="{% url 'profile' %}" #}class="btn btn-success btn-me">| FORUM |</a>
-        </div>
-        <div class="col-me-2">
-            <a role="button" href="{% url 'listusers' %}" class="btn btn-success btn-me">| PROFILE |</a>
-        </div>
-        <div class="col-me-2"><a role="button" href="{% url 'contact' %}" class="btn btn-success btn-me">|
-            CONTACT
-            |</a>
-        </div>
-        <div class="alert alert-success" role="alert" style="margin-left: 50px; height: 40px">
-            <div id="zegar" class="clock"></div>
-        </div>
 
-    </div>
-
-    <div class="row">
-        <div class="col-sm-8">
-            <div class="cart">
-                <div class="card-body">
-                    {% if user.is_authenticated %}
-                        <strong class="card-title">Hello {{ user }}!</strong>
-                        <a class="btn btn-primary btn-sm" href="{% url 'logout' %}" role="button">Logout <i
-                                class="fas fa-sign-out-alt"></i></a>
-                    {% else %}
-                        Hello stranger!
-                        <a class="btn btn-primary btn-sm" href="{% url 'login' %}" role="button">Login <i
-                                class="fas fa-sign-in-alt"></i></a>
-                        You don't have an account yet?
-                        <a class="btn btn-primary btn-sm" href="{% url 'signup' %}" role="button">Signup now! <i
-                                class="fas fa-sign-in-alt"></i></a>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <div id="zegar" class="col-sm-4">
-            <script type="text/javascript" src="{% static 'clock.js' %}"></script>
-        </div>
-    </div>
-
-
+    {% include "navbar.html" %}
     {% block content %}
     {% endblock %}
     {% include 'footer.html' %}
-    <script type="text/javascript" id="cookieinfo"
-            src="//cookieinfoscript.com/js/cookieinfo.min.js"
-            data-bg="#645862"
-            data-fg="#FFFFFF"
-            data-link="#F1D600"
-            data-cookie="CookieInfoScript"
-            data-text-align="left"
-            data-close-text="Got it!">
-    </script>
-</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+{#        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>#}
+{#        <!-- Include all compiled plugins (below), or include individual files as needed -->#}
+{#        <script src="{% static "js/bootstrap.min.js" %}"></script>#}
+{#        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+{#    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>#}
+{#    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>#}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
 </html>

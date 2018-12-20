@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="november">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.11">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.14">
     <root id="1">
       <ServerVersion>10.6</ServerVersion>
     </root>
@@ -199,7 +199,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5034</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -208,7 +207,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5034</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -217,7 +215,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5034</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -226,7 +223,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5034</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -235,7 +231,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5034</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -244,7 +239,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5034</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -253,7 +247,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5036</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -262,7 +255,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5032</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -271,7 +263,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5031</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -280,7 +271,6 @@
       <Owner>postgres</Owner>
       <StateNumber>5069</StateNumber>
       <SequenceIdentity>1..2147483647</SequenceIdentity>
-      <BelongsToColumn>1</BelongsToColumn>
       <CacheSize>1</CacheSize>
       <DataType>integer</DataType>
     </sequence>
@@ -346,7 +336,6 @@
       <StateNumber>5034</StateNumber>
       <DefaultExpression>nextval(&apos;auth_group_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>auth_group_id_seq</SequenceName>
     </column>
     <column id="61" parent="49" name="name">
       <Position>2</Position>
@@ -387,7 +376,6 @@
       <StateNumber>5034</StateNumber>
       <DefaultExpression>nextval(&apos;auth_group_permissions_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>auth_group_permissions_id_seq</SequenceName>
     </column>
     <column id="68" parent="50" name="group_id">
       <Position>2</Position>
@@ -463,7 +451,6 @@ permission_id</ColNames>
       <StateNumber>5034</StateNumber>
       <DefaultExpression>nextval(&apos;auth_permission_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>auth_permission_id_seq</SequenceName>
     </column>
     <column id="79" parent="51" name="name">
       <Position>2</Position>
@@ -531,7 +518,6 @@ codename</ColNames>
       <StateNumber>5034</StateNumber>
       <DefaultExpression>nextval(&apos;auth_user_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>auth_user_id_seq</SequenceName>
     </column>
     <column id="89" parent="52" name="password">
       <Position>2</Position>
@@ -634,7 +620,6 @@ codename</ColNames>
       <StateNumber>5034</StateNumber>
       <DefaultExpression>nextval(&apos;auth_user_groups_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>auth_user_groups_id_seq</SequenceName>
     </column>
     <column id="105" parent="53" name="user_id">
       <Position>2</Position>
@@ -710,7 +695,6 @@ group_id</ColNames>
       <StateNumber>5034</StateNumber>
       <DefaultExpression>nextval(&apos;auth_user_user_permissions_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>auth_user_user_permissions_id_seq</SequenceName>
     </column>
     <column id="116" parent="54" name="user_id">
       <Position>2</Position>
@@ -786,7 +770,6 @@ permission_id</ColNames>
       <StateNumber>5036</StateNumber>
       <DefaultExpression>nextval(&apos;django_admin_log_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>django_admin_log_id_seq</SequenceName>
     </column>
     <column id="127" parent="55" name="action_time">
       <Position>2</Position>
@@ -888,7 +871,6 @@ permission_id</ColNames>
       <StateNumber>5032</StateNumber>
       <DefaultExpression>nextval(&apos;django_content_type_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>django_content_type_id_seq</SequenceName>
     </column>
     <column id="142" parent="56" name="app_label">
       <Position>3</Position>
@@ -934,7 +916,6 @@ model</ColNames>
       <StateNumber>5031</StateNumber>
       <DefaultExpression>nextval(&apos;django_migrations_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>django_migrations_id_seq</SequenceName>
     </column>
     <column id="149" parent="57" name="app">
       <Position>2</Position>
@@ -1015,7 +996,6 @@ model</ColNames>
       <StateNumber>5069</StateNumber>
       <DefaultExpression>nextval(&apos;main_movie_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
-      <SequenceName>main_movie_id_seq</SequenceName>
     </column>
     <column id="162" parent="59" name="name">
       <Position>2</Position>

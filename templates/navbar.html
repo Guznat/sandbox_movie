@@ -1,0 +1,65 @@
+{% load static %}
+<nav id="navigationbar" class="navbar navbar-expand-lg navbar-light bg-success">
+<img id="logo" src="{% static 'logo.png' %}">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+ <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'homepage' %}">Home <i class="fas fa-home"></i><span class="sr-only">(current)</span></a>
+      </li>
+ </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'wszystkie_filmy' %}">LIST OF MOVIE <i
+                        class="fas fa-film"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'meows_list' %}">MEOWS <i class="fas fa-cat"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'listusers' %}">PROFILE <i
+                        class="fas fa-users"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}"> CONTACT <i class="fas fa-mail-bulk"></i></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    {% if user.is_authenticated %}
+                    HELLO {{ user |upper}}! <i class="fas fa-user-alt"></i>
+                     {% else %}
+                        HELLO STRANGER! <i class="fas fa-user-alt"></i>
+                    {% endif %}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% if user.is_authenticated %}
+                        <a id="login_p" class="btn btn-primary btn-sm" href="{% url 'logout' %}" role="button">Logout <i
+                                class="fas fa-sign-out-alt"></i></a>
+                        <br>
+                        <a id="login_p" class="btn btn-primary btn-sm" href="{% url 'profile' user.id %}" role="button">Profile</a>
+{#                        <a class="dropdown-item" href="#">Something else here</a>#}
+                    {% else %}
+                        <p>
+                        <a id="login_p" class="btn btn-primary btn-sm" href="{% url 'login' %}" role="button">Login <i
+                                class="fas fa-sign-in-alt"></i></a>
+                        <a id="login_p" class="btn btn-primary btn-sm" href="{% url 'signup' %}" role="button">Signup! <i
+                                class="fas fa-sign-in-alt"></i></a>
+                    {% endif %}
+
+                    <div class="dropdown-divider"></div>
+                </div>
+            </li>
+            {#      <li class="nav-item">#}
+            {#        <a class="nav-link disabled" href="#">Disabled</a>#}
+            {#      </li>#}
+        </ul>
+        <div id="zegar_box">
+            <div id="zegar" class="clock"></div>
+        </div>
+    {% include 'meows/meow_search.html' %}
+    </div>
+</nav>

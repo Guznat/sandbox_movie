@@ -25,11 +25,14 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path('main/', include('main.urls')),
     path('', include('contact.urls')),
+    path('meow/', include('meows.urls')),
     path('admin/', admin.site.urls),
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
-    path('', homepage, name='homepage'),
+    path('', Homepage.as_view(), name='homepage'),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 
- ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ ]
+if settings.DEBUG:
+    urlpatterns += (static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT))

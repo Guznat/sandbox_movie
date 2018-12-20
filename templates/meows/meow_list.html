@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% load static %}
+{% block title %}{{ block.super }} | Meows
+{% endblock %}
+{% block content %}
+    <div class="row">
+    <div class="col-lg-4">
+    </div>
+    <div class="col-sm-8">
+      {% include 'meows/meow_search.html' %}
+  <a  href="{% url 'create_meow' %}" class="btn btn-primary">CREATE MEOW</a>
+    {% for object in object_list %}
+<div class="card" id="meow_card_list">
+  <h6 class="card-header"> {{ object.user }} :</h6>
+  <div class="card-body">
+    <p class="card-text">{{ object.content }}</p>
+    <a style="float:right" href="{{ object.get_absolute_url }}" class="btn btn-primary">View</a>
+      {% if object.user == request.user %}
+    <a style="float:right" href="{% url 'meow_update' object.id %}" class="btn btn-primary">Update</a>
+    <a style="float:right" href="{% url 'meow_delete' object.id %}" class="btn btn-primary">Delete</a>
+      {% endif %}
+      <footer class="blockquote-footer">posted {{ object.add_date|timesince }} ago</footer>
+  </div>
+</div>
+
+
+                {% empty %}
+                {% if request.GET.q %}
+                    <p>We dont have this meow.</p>
+                {% else %}
+                    <p>Nobody has meow yet.</p>
+                {% endif %}
+
+
+    {% endfor %}
+    </div></div>
+    <br>
+    <br>
+    <br>
+{% endblock %}
+
+
+
+
+
+
+{#        <div class="media">#}
+{#            <div class="media-left">#}
+{##}
+{#                <a href="#">#}
+{#                    {% if object.image %}#}
+{#                    <img class="media-object" src="..." alt="...">#}
+{#                    {% endif %}#}
+{#                </a>#}
+{#            </div>#}
+{#            <div class="media-body">#}
+{#                {{ object.user }}<br>#}
+{#                {{ object.content }} <br>#}
+{#                posted {{ object.add_date|timesince }} ago| <a href="{{ object.get_absolute_url }}">Go.</a>#}
+{#                <hr>#}
+{#     </div>#}
+{#        </div>#}

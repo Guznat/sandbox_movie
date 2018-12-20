@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} Lista filmów {% endblock %}
+{% block title %}{{ block.super }} |  Lista filmów {% endblock %}
 {% block content %}
     <div class="row">
         <div class="col-sm-7">
-            <a type="button" href="{% url 'nowy_film' %}"
+            <a  id="nowy_film" type="button" href="{% url 'nowy_film' %}"
                class="btn btn-success btn-lg btn-block">Add new film <i class="far fa-file"></i></a>
         </div>
     </div>

@@ -27,7 +27,7 @@ from django.contrib.auth.decorators import login_required
 #         return render(request, 'registration/signup.html', ctx)
 
 # NIE RYRA
-
+#                        Add User view <-----------
 class AddUserView(View):
     def get(self, request):
         form = account_forms.CreateUserForm()
@@ -54,6 +54,7 @@ class AddUserView(View):
         return render(request, 'registration/signup.html', ctx)
 
 
+#                    User List view <--------------
 class ListUsers(View):
     def get(self, request):
         ctx = {
@@ -61,6 +62,8 @@ class ListUsers(View):
         }
         return render(request, 'registration/listusers.html', ctx)
 
+
+#                   User Profile view <-------------
 @login_required
 def user_profile(request, id):
     user = User.objects.get(pk=id)
